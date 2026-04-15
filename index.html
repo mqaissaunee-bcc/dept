@@ -13,6 +13,7 @@
       --gold:   #f5a623;
       --teal:   #0d7377;
       --purple: #6c4ec9;
+      --green:  #16a34a;
       --mid:    #1e2f45;
       --card-bg:#16253a;
       --text:   #e8edf3;
@@ -281,11 +282,11 @@
     .t-navy  .card-icon { background: rgba(37,99,235,0.2); }
     .t-navy:hover { border-color: rgba(37,99,235,0.5); }
 
-    .t-gold  .card-stripe { background: var(--gold); }
-    .t-gold  .card-course-id,
-    .t-gold  .card-footer .link-label { color: var(--gold); }
-    .t-gold  .card-icon { background: rgba(245,166,35,0.18); }
-    .t-gold:hover { border-color: rgba(245,166,35,0.5); }
+    .t-green .card-stripe { background: var(--green); }
+    .t-green .card-course-id,
+    .t-green .card-footer .link-label { color: #4ade80; }
+    .t-green .card-icon { background: rgba(22,163,74,0.2); }
+    .t-green:hover { border-color: rgba(22,163,74,0.5); }
 
     /* ── Footer ───────────────────────────── */
     footer {
@@ -412,6 +413,21 @@
         </div>
         <div class="card-footer">
           <span>v0.2.0 &middot; Draft / Work in Progress</span>
+          <span class="link-label">Open &rarr;</span>
+        </div>
+      </a>
+
+      <!-- AI Examples -->
+      <a class="card t-green" href="https://mqaissaunee-bcc.github.io/AI_Examples/" target="_blank">
+        <div class="card-stripe"></div>
+        <div class="card-body">
+          <div class="card-icon">&#129504;</div>
+          <p class="card-course-id">Faculty Resource</p>
+          <h3>AI Examples &mdash; Professor Qaissaunee</h3>
+          <p>Interactive and educational AI tools created for faculty and students at Brookdale Community College. Includes prompt builders, a chatbot builder, video resource tools, AI resistance studio, QTI generator, and more.</p>
+        </div>
+        <div class="card-footer">
+          <span>Faculty AI Tools &middot; Free to Use</span>
           <span class="link-label">Open &rarr;</span>
         </div>
       </a>
