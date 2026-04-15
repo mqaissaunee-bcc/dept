@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advisory Committee 2025–26 | Brookdale Engineering & Technology</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ── Dark mode (default) ── */
+  :root {
+    --red: #CC2936;
+    --navy: #0D1B2A;
+    --navy-mid: #1A2D42;
+    --navy-light: #243B55;
+    --gold: #E8A838;
+    --slate: #7B9CBB;
+    --light: #EFF4F9;
+    --white: #FFFFFF;
+    --text-dim: #9DB4CC;
+    --border: rgba(123,156,187,0.2);
+    --card-bg: rgba(26,45,66,0.8);
+    --body-bg: #0D1B2A;
+    --body-text: #FFFFFF;
+    --nav-bg: #1A2D42;
+  }
+
+  /* ── Light mode ── */
+  body.light {
+    --navy: #F0F4FA;
+    --navy-mid: #FFFFFF;
+    --navy-light: #E2EBF5;
+    --white: #1A2D42;
+    --light: #2C3E55;
+    --text-dim: #5A7A9A;
+    --border: rgba(0,60,120,0.15);
+    --card-bg: rgba(255,255,255,0.97);
+    --body-bg: #F0F4FA;
+    --body-text: #0D1B2A;
+    --nav-bg: #FFFFFF;
+  }
+
+  body.light .wf-table td,
+  body.light .rec-text,
+  body.light .finding,
+  body.light .q-item,
+  body.light .agenda-topic { color: #1A2D42; }
+  body.light .wf-table th { color: #4A6A8A; }
+  body.light .card-title { color: #5A7A9A; }
+  body.light .tab-btn { color: #5A7A9A; }
+  body.light .tab-btn.active { color: #0D1B2A; }
+  body.light .tab-btn:hover { color: #0D1B2A; }
+  body.light nav { background: var(--nav-bg); border-bottom: 1px solid rgba(0,60,120,0.12); }
+  body.light .hero-stat { background: rgba(255,255,255,0.97); }
+  body.light .hero-stat .sub { color: #5A7A9A; }
+  body.light .hero-stat .big { color: #0D1B2A; }
+  body.light .hero-stat .big.red { color: var(--red); }
+  body.light .hero-stat .big.gold { color: #B8860B; }
+  body.light .stat .num { color: #0D1B2A; }
+  body.light .stat .num.red { color: var(--red); }
+  body.light .stat .num.gold { color: #B8860B; }
+  body.light .stat .label { color: #5A7A9A; }
+  body.light .section-label { color: var(--red); }
+  body.light .bar-row .bar-label { color: #4A6A8A; }
+  body.light .bar-val { color: #0D1B2A; }
+  body.light .bar-track { background: rgba(0,0,0,0.07); }
+  body.light .trend-col .yr { color: #5A7A9A; }
+  body.light .trend-total { color: #0D1B2A; }
+  body.light .footnote { color: #6A8AAA; }
+  body.light .divider { border-top-color: rgba(0,60,120,0.12); }
+  body.light .agenda-time { color: #B8860B; }
+  body.light .rec-time { color: #6A8AAA; }
+  body.light .grow-pos { color: #1A7A45; }
+  body.light .grow-neg { color: #6A8AAA; }
+  body.light .wage { color: #B8860B; }
+  body.light .finding { background: rgba(0,0,0,0.03); }
+  body.light .rec { background: rgba(0,0,0,0.02); border-color: rgba(0,60,120,0.12); }
+  body.light .q-item { background: rgba(232,168,56,0.08); }
+  body.light .agenda-item { border-bottom-color: rgba(0,60,120,0.1); }
+  body.light .college-tag { color: #B8860B; }
+  body.light .header-meta { color: rgba(255,255,255,0.65); }
+  body.light #theme-toggle { color: #FFFFFF; border-color: rgba(255,255,255,0.3); }
+  body.light .btn-outline { color: rgba(255,255,255,0.7); }
+  body.light .wf-table tr:hover td { background: rgba(0,0,0,0.02); }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--body-bg, var(--navy));
+    color: var(--body-text, var(--white));
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background 0.25s, color 0.25s;
+  }
+
+  /* ── Background grid ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(123,156,187,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(123,156,187,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Header ── */
+  header {
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(135deg, #0D1B2A 0%, #1A2D42 60%, #243B55 100%);
+    border-bottom: 3px solid var(--red);
+    padding: 2rem 2.5rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .header-left {}
+  .college-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  header h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--white);
+  }
+
+  header h1 span { color: var(--red); }
+
+  .header-meta {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .header-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.6rem;
+    flex-shrink: 0;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.2rem;
+    border-radius: 3px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background: var(--red);
+    color: var(--white);
+  }
+  .btn-primary:hover { background: #a5202b; }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--slate);
+    border: 1px solid var(--border);
+  }
+  .btn-outline:hover { border-color: var(--slate); color: var(--white); }
+
+  /* ── Nav tabs ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy-mid);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 1rem 1.5rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { color: var(--white); }
+  .tab-btn.active { color: var(--white); border-bottom-color: var(--red); }
+
+  /* ── Main layout ── */
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+  }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── Section labels ── */
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.75rem;
+    margin-top: 2rem;
+  }
+  .section-label:first-child { margin-top: 0; }
+
+  /* ── Cards ── */
+  .grid { display: grid; gap: 1rem; }
+  .grid-2 { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    backdrop-filter: blur(4px);
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--red);
+  }
+  .card.gold::before { background: var(--gold); }
+  .card.slate::before { background: var(--slate); }
+  .card.green::before { background: #3BB273; }
+
+  .card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 0.5rem;
+  }
+
+  .card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  /* ── Stat big numbers ── */
+  .stat-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .stat { flex: 1; min-width: 80px; }
+  .stat .num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--white);
+  }
+  .stat .num.red { color: var(--red); }
+  .stat .num.gold { color: var(--gold); }
+  .stat .num.slate { color: var(--slate); }
+  .stat .label {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-top: 0.15rem;
+    line-height: 1.3;
+  }
+
+  /* ── Bar charts ── */
+  .bar-chart { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.5rem; }
+  .bar-row { display: flex; align-items: center; gap: 0.75rem; }
+  .bar-row .bar-label {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    width: 120px;
+    flex-shrink: 0;
+    text-align: right;
+    line-height: 1.2;
+  }
+  .bar-track {
+    flex: 1;
+    height: 10px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 1s cubic-bezier(.4,0,.2,1);
+  }
+  .bar-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--white);
+    width: 50px;
+    flex-shrink: 0;
+  }
+
+  /* ── Enrollment trend ── */
+  .trend-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+  .trend-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+  .trend-col .yr {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+  .trend-bar-wrap {
+    width: 100%;
+    display: flex;
+    gap: 3px;
+    align-items: flex-end;
+    height: 70px;
+  }
+  .trend-seg {
+    flex: 1;
+    border-radius: 2px 2px 0 0;
+    min-height: 3px;
+    transition: height 1s cubic-bezier(.4,0,.2,1);
+  }
+  .trend-seg.ft { background: var(--red); }
+  .trend-seg.pt { background: var(--slate); opacity: 0.6; }
+  .trend-total {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--white);
+  }
+
+  /* ── Finding pills ── */
+  .findings-list { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.5rem; }
+  .finding {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.7rem 0.9rem;
+    background: rgba(255,255,255,0.04);
+    border-radius: 4px;
+    border-left: 3px solid var(--red);
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--light);
+  }
+  .finding.gold { border-left-color: var(--gold); }
+  .finding.green { border-left-color: #3BB273; }
+  .finding.slate { border-left-color: var(--slate); }
+
+  .finding-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--red);
+    flex-shrink: 0;
+    line-height: 1;
+    width: 22px;
+  }
+  .finding.gold .finding-num { color: var(--gold); }
+  .finding.green .finding-num { color: #3BB273; }
+  .finding.slate .finding-num { color: var(--slate); }
+
+  /* ── Recs ── */
+  .rec {
+    display: flex;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    background: rgba(255,255,255,0.04);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    margin-bottom: 0.5rem;
+  }
+  .rec-priority {
+    flex-shrink: 0;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    height: fit-content;
+    margin-top: 2px;
+  }
+  .priority-high { background: rgba(204,41,54,0.25); color: #f08090; border: 1px solid rgba(204,41,54,0.4); }
+  .priority-med { background: rgba(232,168,56,0.2); color: #e8c878; border: 1px solid rgba(232,168,56,0.35); }
+  .priority-low { background: rgba(123,156,187,0.15); color: var(--slate); border: 1px solid rgba(123,156,187,0.3); }
+  .priority-top { background: rgba(59,178,115,0.2); color: #6ee8a8; border: 1px solid rgba(59,178,115,0.35); }
+  .rec-text { font-size: 0.82rem; line-height: 1.55; color: var(--light); }
+  .rec-text strong { color: var(--white); font-weight: 600; }
+  .rec-time { font-size: 0.72rem; color: var(--text-dim); margin-top: 0.25rem; }
+
+  /* ── Discussion questions ── */
+  .q-list { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem; }
+  .q-item {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.7rem 0.9rem;
+    background: rgba(232,168,56,0.06);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--light);
+  }
+  .q-mark {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--gold);
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  /* ── Workforce table ── */
+  .wf-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin-top: 0.75rem; }
+  .wf-table th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+  }
+  .wf-table td {
+    padding: 0.55rem 0.75rem;
+    color: var(--light);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: top;
+    line-height: 1.4;
+  }
+  .wf-table tr:hover td { background: rgba(255,255,255,0.03); }
+  .wf-table .grow-pos { color: #6ee8a8; font-weight: 600; }
+  .wf-table .grow-neg { color: var(--text-dim); }
+  .wf-table .wage { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--gold); }
+
+  /* ── Program badge row ── */
+  .program-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .badge {
+    padding: 0.3rem 0.75rem;
+    border-radius: 3px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .badge-red { background: rgba(204,41,54,0.2); color: #f08090; border: 1px solid rgba(204,41,54,0.35); }
+  .badge-gold { background: rgba(232,168,56,0.15); color: #e8c878; border: 1px solid rgba(232,168,56,0.3); }
+  .badge-slate { background: rgba(123,156,187,0.15); color: var(--slate); border: 1px solid rgba(123,156,187,0.3); }
+  .badge-green { background: rgba(59,178,115,0.15); color: #6ee8a8; border: 1px solid rgba(59,178,115,0.3); }
+
+  /* ── Overview summary row ── */
+  .overview-hero {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-stat {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-stat::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--red), transparent);
+  }
+  .hero-stat .big {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--white);
+  }
+  .hero-stat .big.red { color: var(--red); }
+  .hero-stat .big.gold { color: var(--gold); }
+  .hero-stat .sub {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-top: 0.3rem;
+    line-height: 1.3;
+  }
+
+  /* ── Agenda ── */
+  .agenda-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .agenda-item:last-child { border-bottom: none; }
+  .agenda-time {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--gold);
+    width: 55px;
+    flex-shrink: 0;
+    letter-spacing: 0.05em;
+  }
+  .agenda-topic {
+    font-size: 0.85rem;
+    color: var(--light);
+    line-height: 1.45;
+  }
+  .agenda-topic strong { color: var(--white); font-weight: 600; }
+
+  /* ── Divider ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1.5rem 0;
+  }
+
+  /* ── Footnote ── */
+  .footnote {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-top: 0.5rem;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--navy); }
+  ::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 3px; }
+
+  @media (max-width: 640px) {
+    header { padding: 1.25rem; }
+    main { padding: 1rem 1rem 3rem; }
+    .bar-row .bar-label { width: 80px; font-size: 0.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <div class="college-tag">Brookdale Community College · School of STEAM</div>
+    <h1>Engineering &amp; Technology<br><span>Advisory Committee</span></h1>
+    <div class="header-meta">April 2026 &nbsp;·&nbsp; Programs: Engineering AS · Engineering Tech AAS · NTIT AAS · Cybersecurity ACA · Electronics AAS (ELENG &amp; ELCMP)</div>
+  </div>
+  <div class="header-actions">
+    <div style="display:flex;gap:0.6rem;align-items:center;">
+      <button id="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode" style="background:transparent;border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:3px;padding:0.5rem 0.75rem;cursor:pointer;font-size:1rem;line-height:1;transition:all 0.2s;" aria-label="Toggle light/dark mode">🌙</button>
+      <div style="display:inline-flex;align-items:center;gap:0;border:1px solid rgba(255,255,255,0.25);border-radius:3px;overflow:hidden;">
+        <button onclick="adjustFont(-1)" title="Decrease font size" aria-label="Decrease font size" style="background:transparent;border:none;border-right:1px solid rgba(255,255,255,0.25);color:#fff;padding:0.5rem 0.7rem;cursor:pointer;font-size:0.85rem;font-weight:700;line-height:1;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">A−</button>
+        <span id="font-size-display" style="color:rgba(255,255,255,0.7);font-size:0.75rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;padding:0 0.5rem;letter-spacing:0.05em;min-width:36px;text-align:center;">100%</span>
+        <button onclick="adjustFont(1)" title="Increase font size" aria-label="Increase font size" style="background:transparent;border:none;border-left:1px solid rgba(255,255,255,0.25);color:#fff;padding:0.5rem 0.7rem;cursor:pointer;font-size:0.85rem;font-weight:700;line-height:1;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">A+</button>
+      </div>
+      <a href="https://brookdalecommcollege-my.sharepoint.com/:f:/g/personal/mqaissaunee_brookdalecc_edu/IgCFJD5P50hXQ4hJj8vgETswAYUeeKa7fBPez5HIMxzOPcA?e=BAJiG2" target="_blank" class="btn btn-primary">
+        📂 &nbsp;Full Documents (OneDrive)
+      </a>
+    </div>
+    <div style="font-size:0.72rem; color:var(--text-dim); text-align:right; margin-top:0.2rem;">Advisory Committee 2025–26</div>
+  </div>
+</header>
+
+<nav>
+  <button class="tab-btn active" data-tab="overview">Overview</button>
+  <button class="tab-btn" data-tab="engineering">Engineering AS</button>
+  <button class="tab-btn" data-tab="electronics">Electronics AAS</button>
+  <button class="tab-btn" data-tab="networking">NTIT &amp; Cybersecurity</button>
+  <button class="tab-btn" data-tab="workforce">Workforce Data</button>
+  <button class="tab-btn" data-tab="recs">Recommendations</button>
+  <button class="tab-btn" data-tab="agenda">Agenda &amp; Discussion</button>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════════════
+     TAB: OVERVIEW
+     ═══════════════════════════════════════ -->
+<section class="tab-panel active" id="overview">
+
+  <div class="overview-hero">
+    <div class="hero-stat">
+      <div class="big">5</div>
+      <div class="sub">Programs analyzed<br>this cycle</div>
+    </div>
+    <div class="hero-stat">
+      <div class="big red">346</div>
+      <div class="sub">Total students enrolled<br>Fall 2024 (all programs)</div>
+    </div>
+    <div class="hero-stat">
+      <div class="big gold">221</div>
+      <div class="sub">Engineering AS alone<br>(largest program)</div>
+    </div>
+    <div class="hero-stat">
+      <div class="big">81</div>
+      <div class="sub">NTIT AAS<br>(Fall 2024)</div>
+    </div>
+    <div class="hero-stat">
+      <div class="big">24</div>
+      <div class="sub">Electronics Tech AAS<br>(ELENG + ELCMP combined)</div>
+    </div>
+    <div class="hero-stat">
+      <div class="big">24</div>
+      <div class="sub">Cybersecurity ACA<br>(fast-growing)</div>
+    </div>
+  </div>
+
+  <div class="section-label">Enrollment Trends — All Programs, Fall 2022–2024</div>
+  <div class="grid grid-3">
+
+    <div class="card">
+      <div class="card-title">Engineering AS</div>
+      <div class="trend-row" id="trend-engi"></div>
+      <div class="footnote"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--red);flex-shrink:0;"></span>Full-Time</span> &nbsp; <span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--slate);opacity:0.7;flex-shrink:0;"></span>Part-Time</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">NTIT AAS (Networking)</div>
+      <div class="trend-row" id="trend-ntit"></div>
+      <div class="footnote"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--red);flex-shrink:0;"></span>Full-Time</span> &nbsp; <span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--slate);opacity:0.7;flex-shrink:0;"></span>Part-Time</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Cybersecurity ACA</div>
+      <div class="trend-row" id="trend-cyber"></div>
+      <div class="footnote"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--red);flex-shrink:0;"></span>Full-Time</span> &nbsp; <span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--slate);opacity:0.7;flex-shrink:0;"></span>Part-Time</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Engineering Tech AAS (ELENG)</div>
+      <div class="trend-row" id="trend-eleng"></div>
+      <div class="footnote"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--red);flex-shrink:0;"></span>Full-Time</span> &nbsp; <span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--slate);opacity:0.7;flex-shrink:0;"></span>Part-Time</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Computer Technician AAS (ELCMP)</div>
+      <div class="trend-row" id="trend-elcmp"></div>
+      <div class="footnote"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--red);flex-shrink:0;"></span>Full-Time</span> &nbsp; <span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--slate);opacity:0.7;flex-shrink:0;"></span>Part-Time</span></div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">Key Observation</div>
+      <div class="findings-list">
+        <div class="finding gold"><span class="finding-num" style="color:var(--gold)">↑</span>Engineering AS is growing — FT enrollment up from 108 → 140 (+30%) in three years.</div>
+        <div class="finding gold"><span class="finding-num" style="color:var(--gold)">↑</span>Cybersecurity ACA tripled from 7 to 24 students (Fall '22 → Fall '24), strongest growth rate.</div>
+        <div class="finding gold"><span class="finding-num" style="color:var(--gold)">↓</span>ELENG &amp; ELCMP remain small-enrollment programs requiring active recruitment attention.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">GPA Snapshot — Fall 2024 (Full-Time Students)</div>
+  <div class="card">
+    <div class="bar-chart" id="gpa-bars"></div>
+    <div class="footnote" style="margin-top:0.75rem">Full-time students only (≥12 credits). Scale: 0–4.0</div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Demographics Snapshot — Fall 2024 (All Programs Combined)</div>
+  <div class="grid grid-2">
+    <div class="card">
+      <div class="card-title">Dominant Race/Ethnicity Groups</div>
+      <div class="bar-chart" id="demo-bars"></div>
+      <div class="footnote" style="margin-top:0.75rem">Combined across all five programs; largest groups shown.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Gender Distribution (all programs)</div>
+      <div class="findings-list">
+        <div class="finding slate"><span class="finding-num" style="color:var(--slate)">M</span>Engineering AS: <strong>~85% male</strong> — largest absolute gender gap; 90 male vs. 12 female White students alone.</div>
+        <div class="finding slate"><span class="finding-num" style="color:var(--slate)">M</span>NTIT AAS: <strong>~90% male</strong> — 13 Black/Afr.Am. male vs. 3 female is notable representation in networking.</div>
+        <div class="finding slate"><span class="finding-num" style="color:var(--slate)">M</span>Electronics programs: <strong>nearly 100% male</strong> — ELCMP has 0 female students enrolled in Fall 2024.</div>
+        <div class="finding gold"><span class="finding-num" style="color:var(--gold)">!</span>Gender equity remains a department-wide challenge across all five programs.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════
+     TAB: ENGINEERING AS
+     ═══════════════════════════════════════ -->
+<section class="tab-panel" id="engineering">
+
+  <div class="section-label">Program Snapshot</div>
+  <div class="grid grid-4">
+    <div class="card">
+      <div class="stat-grid">
+        <div class="stat"><div class="num">221</div><div class="label">Total enrolled<br>Fall 2024</div></div>
+        <div class="stat"><div class="num red">140</div><div class="label">Full-time<br>students</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="stat-grid">
+        <div class="stat"><div class="num gold">2.89</div><div class="label">Avg GPA<br>Full-time</div></div>
+        <div class="stat"><div class="num">2.89</div><div class="label">Avg GPA<br>Part-time</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="stat-grid">
+        <div class="stat"><div class="num">63.8%</div><div class="label">Freshman<br>(under 30 cr.)</div></div>
+        <div class="stat"><div class="num">60.2%</div><div class="label">Continuing<br>students</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="stat-grid">
+        <div class="stat"><div class="num gold">85.1%</div><div class="label">Total retention<br>23FA→24FA</div></div>
+        <div class="stat"><div class="num">91.5%</div><div class="label">Retained<br>in program</div></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">5 Specialization Tracks</div>
+  <div class="program-badges" style="margin-bottom:1rem">
+    <span class="badge badge-red">Chemical Engineering</span>
+    <span class="badge badge-red">Civil Engineering</span>
+    <span class="badge badge-red">Electrical Engineering</span>
+    <span class="badge badge-red">Industrial Engineering</span>
+    <span class="badge badge-red">Mechanical Engineering</span>
+    <span class="badge badge-gold">Joint Admission: NJIT</span>
+    <span class="badge badge-green">Articulation: Rutgers University</span>
+  </div>
+
+  <div class="section-label">Three-Year Graduation Trends (Cohorts entering Fall 2018–2020)</div>
+  <div class="card">
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">Fall 2018 cohort</div>
+        <div class="bar-track"><div class="bar-fill" style="width:21%; background:var(--red)"></div></div>
+        <div class="bar-val">15 grad / 56 total</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Fall 2019 cohort</div>
+        <div class="bar-track"><div class="bar-fill" style="width:38%; background:var(--red)"></div></div>
+        <div class="bar-val">20 grad / 52 total</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Fall 2020 cohort</div>
+        <div class="bar-track"><div class="bar-fill" style="width:23%; background:var(--red)"></div></div>
+        <div class="bar-val">10 grad / 44 total</div>
+      </div>
+    </div>
+    <div class="footnote" style="margin-top:0.75rem">Note: Many AS Engineering students transfer prior to completing the degree — these numbers reflect formal degree completion, not successful transfer.</div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Key Findings</div>
+  <div class="findings-list">
+    <div class="finding green"><span class="finding-num">1</span>Core curriculum (calculus, physics, chemistry, engineering mechanics) is <strong>strongly aligned</strong> with NJIT and Rutgers transfer requirements.</div>
+    <div class="finding green"><span class="finding-num">2</span>NJIT Joint Admission Agreement is an <strong>underutilized differentiator</strong> — should be marketed more aggressively to prospective students.</div>
+    <div class="finding red"><span class="finding-num">3</span><strong>No articulation</strong> with Rowan University's Henry M. Rowan College of Engineering despite it being a top NJ engineering school.</div>
+    <div class="finding red"><span class="finding-num">4</span><strong>No Python or computational tools</strong> in current curriculum; Rutgers, NJIT, and most 4-year programs now require Python from semester 1.</div>
+    <div class="finding red"><span class="finding-num">5</span><strong>No Environmental Engineering pathway</strong> despite 7% BLS growth projection and strong NJ federal infrastructure investment.</div>
+    <div class="finding red"><span class="finding-num">6</span>AI/ML tools and simulation software are <strong>absent from curriculum</strong>, increasingly expected by transfer institutions and employers.</div>
+    <div class="finding slate"><span class="finding-num">7</span>Electrical Engineering track has <strong>heaviest load (18 credit electives)</strong> with fall/spring-only constraints — creates cascade risk if a semester is missed.</div>
+    <div class="finding slate"><span class="finding-num">8</span>Students who don't transfer have <strong>limited intermediate credentials</strong> — a stackable certificate would serve this population.</div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════
+     TAB: ELECTRONICS AAS
+     ═══════════════════════════════════════ -->
+<section class="tab-panel" id="electronics">
+
+  <div class="section-label">Two Options — Distinct Outcomes</div>
+  <div class="grid grid-2">
+    <div class="card">
+      <div class="card-title">ELENG — Electrical Engineering Technology</div>
+      <h3>Transfer-Oriented Path</h3>
+      <div class="stat-grid">
+        <div class="stat"><div class="num">9</div><div class="label">FT enrolled<br>Fall 2024</div></div>
+        <div class="stat"><div class="num">13</div><div class="label">PT enrolled<br>Fall 2024</div></div>
+        <div class="stat"><div class="num gold">3.28</div><div class="label">FT Avg<br>GPA</div></div>
+      </div>
+      <div class="program-badges" style="margin-top:0.75rem">
+        <span class="badge badge-green">NJIT Joint Admission</span>
+        <span class="badge badge-slate">Math through Calculus I</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">ELCMP — Electronics/Computer Technology</div>
+      <h3>Direct Employment Path</h3>
+      <div class="stat-grid">
+        <div class="stat"><div class="num">3</div><div class="label">FT enrolled<br>Fall 2024</div></div>
+        <div class="stat"><div class="num">8</div><div class="label">PT enrolled<br>Fall 2024</div></div>
+        <div class="stat"><div class="num gold">2.29</div><div class="label">PT Avg<br>GPA</div></div>
+      </div>
+      <div class="program-badges" style="margin-top:0.75rem">
+        <span class="badge badge-red">No named transfer pathway</span>
+        <span class="badge badge-slate">NETW 106 + Computer Repair</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Recent Curriculum Update</div>
+  <div class="card gold">
+    <div class="card-title">Change Implemented</div>
+    <div class="findings-list">
+      <div class="finding green"><span class="finding-num" style="color:#3BB273">✓</span>COMP 135 (Assembly Language) → <strong>ENGI 103</strong> (Engineering Problem Solving with Computers) — in ELCMP</div>
+      <div class="finding green"><span class="finding-num" style="color:#3BB273">✓</span>COMP 137 (Programming for Engineers) → <strong>ENGI 103</strong> — in ELENG</div>
+      <div class="finding gold"><span class="finding-num">!</span>Advisory Board should confirm ENGI 103 includes MATLAB/Python for engineering contexts, not general programming only.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Curriculum Gap Analysis — Priority Skills Missing</div>
+  <div class="card">
+    <div class="bar-chart">
+      <div class="bar-row"><div class="bar-label">PLCs / Industrial Ctrl</div><div class="bar-track"><div class="bar-fill" style="width:95%; background:var(--red)"></div></div><div class="bar-val" style="color:#f08090">CRITICAL</div></div>
+      <div class="bar-row"><div class="bar-label">Microcontrollers/IoT</div><div class="bar-track"><div class="bar-fill" style="width:90%; background:var(--red)"></div></div><div class="bar-val" style="color:#f08090">CRITICAL</div></div>
+      <div class="bar-row"><div class="bar-label">Renewable Energy</div><div class="bar-track"><div class="bar-fill" style="width:75%; background:var(--gold)"></div></div><div class="bar-val" style="color:#e8c878">HIGH</div></div>
+      <div class="bar-row"><div class="bar-label">PCB Design/SPICE</div><div class="bar-track"><div class="bar-fill" style="width:65%; background:var(--gold)"></div></div><div class="bar-val" style="color:#e8c878">MOD-HIGH</div></div>
+      <div class="bar-row"><div class="bar-label">BMET (Healthcare)</div><div class="bar-track"><div class="bar-fill" style="width:45%; background:var(--slate)"></div></div><div class="bar-val" style="color:var(--slate)">NICHE</div></div>
+    </div>
+    <div class="footnote" style="margin-top:0.75rem">Based on regional job posting analysis, BLS projections, and employer surveys.</div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Key Findings</div>
+  <div class="findings-list">
+    <div class="finding green"><span class="finding-num">1</span>NJIT Joint Admissions Agreement for ELENG is the program's <strong>strongest asset</strong> — guaranteed junior-standing admission upon AAS completion.</div>
+    <div class="finding red"><span class="finding-num">2</span>ELENG advising note about PHYS 111/112 (calculus-based physics) is <strong>buried in catalog notes</strong>, not in the required sequence — causing transfer friction.</div>
+    <div class="finding red"><span class="finding-num">3</span><strong>ELCMP has zero named transfer pathway</strong> — equity issue for workforce students who later seek a bachelor's degree.</div>
+    <div class="finding red"><span class="finding-num">4</span><strong>No PLC content in either option</strong> despite being most-requested skill in manufacturing, energy, and defense job postings.</div>
+    <div class="finding red"><span class="finding-num">5</span><strong>No embedded systems/IoT course</strong> — highest-growth skill cluster per IEEE surveys and NJ job posting analysis.</div>
+    <div class="finding gold"><span class="finding-num">6</span>TDK-Lambda Americas (Neptune City) is <strong>ideal anchor employer partner</strong> — 300+ employees, directly aligned, within Monmouth County.</div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════
+     TAB: NTIT & CYBERSECURITY
+     ═══════════════════════════════════════ -->
+<section class="tab-panel" id="networking">
+
+  <div class="section-label">Program Snapshot — Fall 2024</div>
+  <div class="grid grid-4">
+    <div class="card">
+      <div class="stat-grid">
+        <div class="stat"><div class="num">81</div><div class="label">NTIT total<br>enrolled</div></div>
+        <div class="stat"><div class="num red">41</div><div class="label">Full-time<br>NTIT</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="stat-grid">
+        <div class="stat"><div class="num">24</div><div class="label">Cybersecurity<br>total enrolled</div></div>
+        <div class="stat"><div class="num red">8</div><div class="label">Full-time<br>Cyber</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="stat-grid">
+        <div class="stat"><div class="num gold">2.91</div><div class="label">NTIT FT<br>Avg GPA</div></div>
+        <div class="stat"><div class="num gold">2.81</div><div class="label">Cyber FT<br>Avg GPA</div></div>
+      </div>
+    </div>
+    <div class="card green">
+      <div class="card-title">Institutional Recognition</div>
+      <div style="font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; color:#6ee8a8; margin-bottom:0.4rem;">NSA/DHS CAE-CDE</div>
+      <div style="font-size:0.8rem; color:var(--light); line-height:1.4">National Center of Academic Excellence in Cyber Defense Education — one of few NJ community colleges with this designation.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Curriculum Modernization — Completed Updates</div>
+  <div class="card green">
+    <table class="wf-table">
+      <thead><tr><th>Course</th><th>Old Title</th><th>New Title</th><th>Significance</th></tr></thead>
+      <tbody>
+        <tr><td><strong>NETW 110</strong></td><td style="color:var(--text-dim)">Intro to UNIX Admin</td><td>Red Hat Linux Admin (RHCSA I+II)</td><td>Aligns with RHCSA cert pathway</td></tr>
+        <tr><td><strong>NETW 111</strong></td><td style="color:var(--text-dim)">UNIX Admin II</td><td>Red Hat Ansible Automation</td><td>DevOps/automation — high demand</td></tr>
+        <tr><td><strong>NETW 121</strong></td><td style="color:var(--text-dim)">(New)</td><td>Containers &amp; Orchestration</td><td>Docker/Kubernetes skills</td></tr>
+        <tr><td><strong>NETW 190</strong></td><td style="color:var(--text-dim)">Windows 7 Guide</td><td>Windows Endpoint Administration</td><td>Removes obsolete content</td></tr>
+        <tr><td><strong>NETW 191</strong></td><td style="color:var(--text-dim)">Windows 2008 Server</td><td>Hybrid Server Administration</td><td>Hybrid cloud/on-prem environments</td></tr>
+        <tr><td><strong>NETW 100</strong></td><td style="color:var(--text-dim)">(New)</td><td>Explore IT &amp; Cyber Careers (1 cr.)</td><td>Recruitment &amp; retention support</td></tr>
+      </tbody>
+    </table>
+    <div class="footnote" style="margin-top:0.75rem">These updates place Brookdale ahead of many peer community colleges still delivering legacy content. Advisory Board endorsement requested.</div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Curriculum Gaps Identified</div>
+  <div class="card">
+    <div class="bar-chart">
+      <div class="bar-row"><div class="bar-label">Cloud Security (AWS/Azure)</div><div class="bar-track"><div class="bar-fill" style="width:95%; background:var(--red)"></div></div><div class="bar-val" style="color:#f08090">SIG. GAP</div></div>
+      <div class="bar-row"><div class="bar-label">SIEM / SOC Operations</div><div class="bar-track"><div class="bar-fill" style="width:85%; background:var(--red)"></div></div><div class="bar-val" style="color:#f08090">MOD. GAP</div></div>
+      <div class="bar-row"><div class="bar-label">GRC / Compliance (NIST)</div><div class="bar-track"><div class="bar-fill" style="width:75%; background:var(--gold)"></div></div><div class="bar-val" style="color:#e8c878">MOD. GAP</div></div>
+      <div class="bar-row"><div class="bar-label">Zero Trust / SASE</div><div class="bar-track"><div class="bar-fill" style="width:70%; background:var(--gold)"></div></div><div class="bar-val" style="color:#e8c878">EMERGING</div></div>
+      <div class="bar-row"><div class="bar-label">AI/ML in Cybersecurity</div><div class="bar-track"><div class="bar-fill" style="width:60%; background:var(--gold)"></div></div><div class="bar-val" style="color:#e8c878">EMERGING</div></div>
+      <div class="bar-row"><div class="bar-label">OT/ICS Security</div><div class="bar-track"><div class="bar-fill" style="width:40%; background:var(--slate)"></div></div><div class="bar-val" style="color:var(--slate)">NICHE</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Transfer Pathway Status</div>
+  <div class="card">
+    <table class="wf-table">
+      <thead><tr><th>Institution</th><th>Program</th><th>Status</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td>Thomas Edison State Univ.</td><td>B.S. Cybersecurity (online)</td><td style="color:#f08090">No formal agreement</td><td><span class="badge badge-red" style="font-size:0.65rem">HIGHEST</span></td></tr>
+        <tr><td>Monmouth University</td><td>B.S. Computer Science / IT</td><td style="color:#f08090">Not program-specific</td><td><span class="badge badge-red" style="font-size:0.65rem">HIGH</span></td></tr>
+        <tr><td>NJIT</td><td>B.S. Computer Science / IT</td><td style="color:#e8c878">Exists but not NTIT-specific</td><td><span class="badge badge-gold" style="font-size:0.65rem">HIGH</span></td></tr>
+        <tr><td>Excelsior University</td><td>B.S. Cybersecurity</td><td style="color:#6ee8a8">Formal agreement</td><td><span class="badge badge-green" style="font-size:0.65rem">ACTIVE</span></td></tr>
+        <tr><td>Wilmington University</td><td>B.S. Info Systems Mgmt</td><td style="color:#6ee8a8">Formal agreement</td><td><span class="badge badge-green" style="font-size:0.65rem">ACTIVE</span></td></tr>
+        <tr><td>Kean University</td><td>B.S. Cybersecurity (CAE-CD)</td><td style="color:var(--text-dim)">NJ Transfer only</td><td><span class="badge badge-slate" style="font-size:0.65rem">PURSUE</span></td></tr>
+      </tbody>
+    </table>
+    <div class="footnote" style="margin-top:0.75rem">NTIT is an A.A.S. degree — <strong>not automatically covered</strong> by NJ statewide transfer protections. Formal articulation agreements are essential, not optional.</div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════
+     TAB: WORKFORCE DATA
+     ═══════════════════════════════════════ -->
+<section class="tab-panel" id="workforce">
+
+  <div class="section-label">BLS Labor Market Projections 2024–2034 — Engineering Disciplines</div>
+  <div class="card">
+    <table class="wf-table">
+      <thead><tr><th>Occupation</th><th>Projected Growth</th><th>Annual Openings</th><th>Median Wage (2024)</th></tr></thead>
+      <tbody>
+        <tr><td>Industrial Engineering</td><td class="grow-pos">+11% (much faster)</td><td>~25,200/yr</td><td class="wage">$101,140</td></tr>
+        <tr><td>Mechanical Engineering</td><td class="grow-pos">+9% (much faster)</td><td>~18,100/yr</td><td class="wage">$99,800</td></tr>
+        <tr><td>Electrical &amp; Electronics Eng.</td><td class="grow-pos">+7% (faster)</td><td>~17,500/yr</td><td class="wage">$107,890</td></tr>
+        <tr><td>Environmental Engineering</td><td class="grow-pos">+7% (faster)</td><td>n/a</td><td class="wage">—</td></tr>
+        <tr><td>Civil Engineering</td><td class="grow-pos">+5% (faster)</td><td>~23,600/yr</td><td class="wage">$99,490</td></tr>
+        <tr><td>Chemical Engineering</td><td>+4% (avg)</td><td>~3,400/yr</td><td class="wage">$114,590</td></tr>
+        <tr><td><strong>All Engineering (combined)</strong></td><td class="grow-pos"><strong>Faster than avg</strong></td><td>~186,500/yr</td><td class="wage">$97,310</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">BLS Labor Market Projections — Networking &amp; Cybersecurity</div>
+  <div class="card">
+    <table class="wf-table">
+      <thead><tr><th>Occupation</th><th>Projected Growth</th><th>Annual Openings</th><th>Median Wage (2024)</th><th>NJ Context</th></tr></thead>
+      <tbody>
+        <tr><td>Information Security Analysts</td><td class="grow-pos">+29% (3× avg!)</td><td>~16,000/yr</td><td class="wage">$124,910</td><td>#2 nationally for employment; Top 5 wages</td></tr>
+        <tr><td>Network &amp; Computer Systems Admins</td><td class="grow-neg">−4% (but steady openings)</td><td>~14,300/yr</td><td class="wage">$96,800</td><td>NJ median ~$108,000+</td></tr>
+        <tr><td>Computer &amp; IT Occupations (broad)</td><td class="grow-pos">Faster than avg</td><td>~317,700/yr</td><td class="wage">$105,990</td><td>Metro area premium</td></tr>
+      </tbody>
+    </table>
+    <div class="footnote" style="margin-top:0.75rem">The −4% decline in network admin roles reflects automation of routine tasks, not elimination. Security + automation + containers skills = durable demand.</div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">BLS Projections — Electronics Technician Roles</div>
+  <div class="card">
+    <table class="wf-table">
+      <thead><tr><th>Occupation</th><th>Projected Growth</th><th>Annual Openings</th><th>Median Wage</th></tr></thead>
+      <tbody>
+        <tr><td>Electrical &amp; Electronics Engineers</td><td class="grow-pos">+7% (faster)</td><td>~17,500/yr</td><td class="wage">$111,910–$127,590</td></tr>
+        <tr><td>Electrical/Electronic Eng. Technicians</td><td>+1% (replacement demand)</td><td>~8,400/yr</td><td class="wage">$77,180</td></tr>
+        <tr><td>Electro-Mechanical Technicians</td><td>+1% (replacement)</td><td>~1,300/yr</td><td class="wage">$70,760</td></tr>
+      </tbody>
+    </table>
+    <div class="footnote" style="margin-top:0.75rem">Key differentiator: ELENG students who transfer earn bachelor's degrees and access the engineering professional market (+7%) rather than the technician market (+1%).</div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Regional Employer Landscape — Monmouth County &amp; NJ Metro</div>
+  <div class="grid grid-2">
+    <div class="card">
+      <div class="card-title">Engineering &amp; Electronics Employers</div>
+      <div class="findings-list">
+        <div class="finding slate"><span class="finding-num" style="font-size:0.75rem">DEF</span><strong>TDK-Lambda Americas</strong> (Neptune City) — 300-emp ISO-9001 power electronics mfr; direct ELCMP/ELENG match.</div>
+        <div class="finding slate"><span class="finding-num" style="font-size:0.75rem">DEF</span><strong>Lockheed Martin</strong> (Moorestown) — 3,000+ employees; RMS segment.</div>
+        <div class="finding slate"><span class="finding-num" style="font-size:0.75rem">DEF</span><strong>Cobham Advanced Electronics</strong> (Eatontown) — microelectronics &amp; radar.</div>
+        <div class="finding slate"><span class="finding-num" style="font-size:0.75rem">ENR</span><strong>NJ Resources</strong> (Wall Township) + Atlantic Shores Offshore Wind — clean energy growth.</div>
+        <div class="finding slate"><span class="finding-num" style="font-size:0.75rem">CIV</span><strong>NJDOT, NJ Transit, AECOM, Parsons</strong> — civil/infrastructure under IIJA.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Networking &amp; Cybersecurity Employers</div>
+      <div class="findings-list">
+        <div class="finding red"><span class="finding-num" style="font-size:0.75rem">FIN</span><strong>JPMorgan Chase, Prudential Financial, Fiserv</strong> — financial services cyber demand.</div>
+        <div class="finding red"><span class="finding-num" style="font-size:0.75rem">HLT</span><strong>Hackensack Meridian Health, RWJBarnabas</strong> — healthcare IT &amp; cybersecurity.</div>
+        <div class="finding red"><span class="finding-num" style="font-size:0.75rem">DEF</span><strong>IPKeys Technologies</strong> (Eatontown), D&amp;S Consultants — defense contractors, cleared roles.</div>
+        <div class="finding red"><span class="finding-num" style="font-size:0.75rem">MSP</span><strong>Aspire Technology Partners, Entelligence, Tekgence</strong> — local MSPs, internship potential.</div>
+        <div class="finding red"><span class="finding-num" style="font-size:0.75rem">TEL</span><strong>AT&amp;T, Verizon, DriveNets</strong> (Middletown) — telecom, 5G, network hardware.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════
+     TAB: RECOMMENDATIONS
+     ═══════════════════════════════════════ -->
+<section class="tab-panel" id="recs">
+
+  <div class="section-label">Engineering AS — Priority Recommendations</div>
+
+  <div class="rec"><span class="rec-priority priority-high">HIGH</span><div class="rec-text"><strong>Pursue Rowan University articulation agreement</strong> — Henry M. Rowan College of Engineering accepts up to 90 transfer credits; covers all 5 of Brookdale's specialization tracks. Initiate Spring 2026.<div class="rec-time">Timeline: Spring 2026 (initiate) → AY 2026–27 (execute)</div></div></div>
+
+  <div class="rec"><span class="rec-priority priority-high">HIGH</span><div class="rec-text"><strong>Revise ENGI 103 to include Python &amp; computational tools</strong> — NJIT, Rutgers, and regional employers all expect Python from semester one. Add NumPy, Pandas, Matplotlib, simulation basics.<div class="rec-time">Timeline: Summer 2026 (curriculum revision) → Fall 2026 (implementation)</div></div></div>
+
+  <div class="rec"><span class="rec-priority priority-high">HIGH</span><div class="rec-text"><strong>Develop Engineering Transfer Advising Checklist</strong> — one page per specialization, updated annually; assign a faculty Engineering Transfer Advisor.<div class="rec-time">Timeline: Spring 2026</div></div></div>
+
+  <div class="rec"><span class="rec-priority priority-med">MED</span><div class="rec-text"><strong>Update ENGI 121 CAD curriculum</strong> — incorporate SolidWorks or Fusion 360 (3D parametric modeling); BIM literacy. Autodesk Revit now expected by Rutgers, NJIT, and Rowan.<div class="rec-time">Timeline: AY 2026–27</div></div></div>
+
+  <div class="rec"><span class="rec-priority priority-med">MED</span><div class="rec-text"><strong>Develop stackable Engineering Technology Fundamentals Certificate</strong> (12–15 credits) for non-transfer students and Perkins V alignment.<div class="rec-time">Timeline: AY 2026–27</div></div></div>
+
+  <div class="rec"><span class="rec-priority priority-med">MED</span><div class="rec-text"><strong>Add Environmental Engineering elective pathway</strong> — designate existing or new course as approved elective in Civil/Industrial track.<div class="rec-time">Timeline: AY 2026–27</div></div></div>
+
+  <hr class="divider">
+
+  <div class="section-label">Electronics AAS — Priority Recommendations</div>
+
+  <div class="rec"><span class="rec-priority priority-top">HIGHEST</span><div class="rec-text"><strong>Add ELEC 220: Microcontrollers and Embedded Systems</strong> (3–4 cr.) — Arduino/Raspberry Pi, C/C++ firmware, sensor interfacing, serial protocols (I2C, SPI, UART). Single largest skill gap vs. employer demand.<div class="rec-time">Timeline: AY 2026–27</div></div></div>
+
+  <div class="rec"><span class="rec-priority priority-top">HIGHEST</span><div class="rec-text"><strong>Introduce PLC and Industrial Controls content</strong> — new ELEC 222 or embedded in ELEC 112. Advisory Board input on platform (Allen-Bradley / Siemens / Omron) needed at this meeting.<div class="rec-time">Timeline: AY 2026–27</div></div></div>
+
+  <div class="rec"><span class="rec-priority priority-top">HIGHEST</span><div class="rec-text"><strong>Pursue TESU articulation agreement for both ELENG &amp; ELCMP</strong> — ABET-accredited B.S. in Electronics Systems Engineering Technology; fully online; accepts up to 90 credits. Would give ELCMP its first named transfer pathway.<div class="rec-time">Timeline: Spring 2026 (initiate)</div></div></div>
+
+  <div class="rec"><span class="rec-priority priority-high">HIGH</span><div class="rec-text"><strong>Formalize partnership with TDK-Lambda Americas</strong> (Neptune City) — advisory board seat, internship/co-op pipeline, equipment donation for lab upgrades.<div class="rec-time">Timeline: Spring/Fall 2026</div></div></div>
+
+  <div class="rec"><span class="rec-priority priority-high">HIGH</span><div class="rec-text"><strong>Add PHYS 111/112 to ELENG required sequence</strong> (or strongly flag) — currently buried in catalog notes; causes systematic transfer friction at NJIT.<div class="rec-time">Timeline: AY 2025–26 review</div></div></div>
+
+  <hr class="divider">
+
+  <div class="section-label">NTIT &amp; Cybersecurity — Priority Recommendations</div>
+
+  <div class="rec"><span class="rec-priority priority-top">HIGHEST</span><div class="rec-text"><strong>Pursue TESU articulation agreement</strong> — Thomas Edison State University B.S. Cybersecurity; fully online; accepts up to 90 credits; partners with all NJ community colleges. No current agreement = significant missed opportunity.<div class="rec-time">Timeline: AY 2025–26</div></div></div>
+
+  <div class="rec"><span class="rec-priority priority-top">HIGHEST</span><div class="rec-text"><strong>Advisory Board formally endorses curriculum updates</strong> — NETW 100, 110, 111, 121, 190, 191. Action item for this meeting.<div class="rec-time">Timeline: This Meeting</div></div></div>
+
+  <div class="rec"><span class="rec-priority priority-high">HIGH</span><div class="rec-text"><strong>Develop Cloud Security content</strong> — new NETW 195 (3 cr.) or embedded module in NETW 107/191. AWS/Azure security services, IAM, cloud misconfiguration, shared responsibility model. CompTIA Cloud+ alignment.<div class="rec-time">Timeline: AY 2026–27</div></div></div>
+
+  <div class="rec"><span class="rec-priority priority-high">HIGH</span><div class="rec-text"><strong>Create SIEM/SOC Operations module or certificate</strong> — Splunk, log analysis, incident response. Directly targets accessible entry-level SOC analyst pathway. Approach Aspire Technology or HMH for co-development.<div class="rec-time">Timeline: AY 2026–27</div></div></div>
+
+  <div class="rec"><span class="rec-priority priority-high">HIGH</span><div class="rec-text"><strong>Conduct NSA Knowledge Unit (KU) alignment audit</strong> of updated curriculum (NETW 110, 111, 121) for CAE-CDE renewal documentation.<div class="rec-time">Timeline: Summer 2026</div></div></div>
+
+  <div class="rec"><span class="rec-priority priority-high">HIGH</span><div class="rec-text"><strong>Establish Cybersecurity Employer Sub-Committee</strong> — identify advisory board members willing to serve. Include healthcare, financial services, defense, MSP representatives. Action item for this meeting.<div class="rec-time">Timeline: This Meeting</div></div></div>
+
+</section>
+
+<!-- ═══════════════════════════════════════
+     TAB: AGENDA & DISCUSSION
+     ═══════════════════════════════════════ -->
+<section class="tab-panel" id="agenda">
+
+  <div class="section-label">Suggested Meeting Agenda (~75 Minutes)</div>
+  <div class="card" style="padding: 0;">
+    <div class="agenda-item"><div class="agenda-time">0:00</div><div class="agenda-topic"><strong>Welcome &amp; Introductions</strong> — Chair, Dean of STEAM, Department Chair</div></div>
+    <div class="agenda-item"><div class="agenda-time">0:08</div><div class="agenda-topic"><strong>Program Enrollment &amp; Student Success Overview</strong> — 5-program snapshot (this dashboard); key trends &amp; demographics</div></div>
+    <div class="agenda-item"><div class="agenda-time">0:18</div><div class="agenda-topic"><strong>Curriculum Updates — Formal Endorsement</strong> — NTIT/Cyber: NETW 100, 110, 111, 121, 190, 191 · Electronics: ENGI 103 replacement in ELENG &amp; ELCMP</div></div>
+    <div class="agenda-item"><div class="agenda-time">0:28</div><div class="agenda-topic"><strong>Strategic Discussion: Workforce &amp; Curriculum Gaps</strong> — PLC platform preference · Cloud security · Python in engineering · Embedded systems</div></div>
+    <div class="agenda-item"><div class="agenda-time">0:45</div><div class="agenda-topic"><strong>Transfer Pathway Priorities</strong> — TESU articulation (NTIT, ELENG, ELCMP) · Rowan Engineering · Monmouth University · NJIT expansion</div></div>
+    <div class="agenda-item"><div class="agenda-time">0:55</div><div class="agenda-topic"><strong>Employer Partnerships &amp; Work-Based Learning</strong> — TDK-Lambda · Cybersecurity Sub-Committee · Internship pipelines</div></div>
+    <div class="agenda-item"><div class="agenda-time">1:05</div><div class="agenda-topic"><strong>Next Steps &amp; Assignments</strong> — Action item ownership, target dates, follow-up communication plan</div></div>
+    <div class="agenda-item"><div class="agenda-time">1:12</div><div class="agenda-topic"><strong>Open Discussion / Adjourn</strong></div></div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Key Action Items for Vote/Decision at This Meeting</div>
+  <div class="findings-list">
+    <div class="finding gold"><span class="finding-num">A</span><strong>Advisory Board formally endorses</strong> NTIT curriculum updates (NETW 100, 110, 111, 121, 190, 191).</div>
+    <div class="finding gold"><span class="finding-num">B</span><strong>Advisory Board formally endorses</strong> ENGI 103 replacement for ELENG and ELCMP; confirms engineering computing tools scope.</div>
+    <div class="finding gold"><span class="finding-num">C</span><strong>PLC platform preference</strong> — Allen-Bradley, Siemens, or Omron? Input from employer members with manufacturing/energy operations.</div>
+    <div class="finding gold"><span class="finding-num">D</span><strong>Identify Advisory Board members</strong> willing to serve on new Cybersecurity Employer Sub-Committee.</div>
+    <div class="finding gold"><span class="finding-num">E</span><strong>Identify employer members</strong> willing to explore internship/co-op capacity (NTIT, ELCMP especially).</div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Discussion Questions — Engineering AS</div>
+  <div class="q-list">
+    <div class="q-item"><span class="q-mark">Q</span>Which technical skills gaps are most commonly observed in new engineering graduates entering your workforce?</div>
+    <div class="q-item"><span class="q-mark">Q</span>Do you see growing demand for sub-baccalaureate engineering technicians? Would a stackable certificate be valuable?</div>
+    <div class="q-item"><span class="q-mark">Q</span>Which emerging areas — renewable energy, AI-augmented design, advanced manufacturing, cybersecurity for industrial systems — should Brookdale prioritize over the next 3–5 years?</div>
+    <div class="q-item"><span class="q-mark">Q</span>Can your organization support Brookdale's efforts to build articulation pathways with Rowan, Stevens, or additional transfer institutions?</div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Discussion Questions — Electronics AAS</div>
+  <div class="q-list">
+    <div class="q-item"><span class="q-mark">Q</span>What are the 2–3 most critical technical competencies missing from Electronics program graduates that your organization needs?</div>
+    <div class="q-item"><span class="q-mark">Q</span>For manufacturing/industrial employers: what PLC brand does your organization primarily use? (Allen-Bradley, Siemens, Omron, other?)</div>
+    <div class="q-item"><span class="q-mark">Q</span>What test/measurement tools or simulation software (LabVIEW, MATLAB, LTspice) do you consider essential for entry-level electronics hires?</div>
+    <div class="q-item"><span class="q-mark">Q</span>For healthcare representatives: is there interest in supporting a Biomedical Equipment Technician (BMET) certificate track? What competencies would be most valuable?</div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">Discussion Questions — NTIT &amp; Cybersecurity</div>
+  <div class="q-list">
+    <div class="q-item"><span class="q-mark">Q</span>Do employers require wireless security competencies from entry-level candidates? What specific topics or certifications are most valued (post-NETW 125 deletion)?</div>
+    <div class="q-item"><span class="q-mark">Q</span>Which specific certifications do your organizations require or prefer for entry-level networking and cybersecurity hires?</div>
+    <div class="q-item"><span class="q-mark">Q</span>Would member organizations participate in a structured internship or co-op program? What would the ideal candidate profile and format look like?</div>
+    <div class="q-item"><span class="q-mark">Q</span>Which compliance frameworks (HIPAA, PCI-DSS, NIST CSF, CMMC) does your organization prioritize in hiring that you'd like to see more explicitly addressed in the curriculum?</div>
+    <div class="q-item"><span class="q-mark">Q</span>Are you observing difficulty filling roles that Brookdale graduates could realistically fill with additional preparation? What specific gaps are you seeing?</div>
+  </div>
+
+</section>
+
+</main>
+
+<script>
+// ── Tab switching ──
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    initCharts();
+  });
+});
+
+// ── Trend bar data ──
+const trendData = {
+  'trend-engi':  { years:['FA22','FA23','FA24'], ft:[108,127,140], pt:[98,92,81] },
+  'trend-ntit':  { years:['FA22','FA23','FA24'], ft:[30,26,41],   pt:[31,36,40] },
+  'trend-cyber': { years:['FA22','FA23','FA24'], ft:[1,4,8],      pt:[6,6,16] },
+  'trend-eleng': { years:['FA22','FA23','FA24'], ft:[4,5,9],      pt:[6,9,13] },
+  'trend-elcmp': { years:['FA22','FA23','FA24'], ft:[7,5,3],      pt:[3,2,8] },
+};
+
+function initCharts() {
+  // Trend bars
+  Object.entries(trendData).forEach(([id, d]) => {
+    const el = document.getElementById(id);
+    if (!el || el.dataset.rendered) return;
+    el.dataset.rendered = '1';
+    const maxTotal = Math.max(...d.ft.map((f,i) => f + d.pt[i]));
+    d.years.forEach((yr, i) => {
+      const total = d.ft[i] + d.pt[i];
+      const ftH = Math.round((d.ft[i] / maxTotal) * 65);
+      const ptH = Math.round((d.pt[i] / maxTotal) * 65);
+      el.innerHTML += `
+        <div class="trend-col">
+          <div class="trend-bar-wrap">
+            <div class="trend-seg ft" style="height:0px" data-h="${ftH}"></div>
+            <div class="trend-seg pt" style="height:0px" data-h="${ptH}"></div>
+          </div>
+          <div class="trend-total">${total}</div>
+          <div class="yr">${yr}</div>
+        </div>`;
+    });
+    // Animate
+    setTimeout(() => {
+      el.querySelectorAll('.trend-seg').forEach(seg => {
+        seg.style.height = seg.dataset.h + 'px';
+      });
+    }, 100);
+  });
+
+  // GPA bars
+  const gpaEl = document.getElementById('gpa-bars');
+  if (gpaEl && !gpaEl.dataset.rendered) {
+    gpaEl.dataset.rendered = '1';
+    const programs = [
+      { label: 'Engineering AS', gpa: 2.89 },
+      { label: 'NTIT AAS',       gpa: 2.91 },
+      { label: 'Cybersecurity',  gpa: 2.81 },
+      { label: 'Eng. Tech AAS',  gpa: 3.28 },
+      { label: 'Computer Tech',  gpa: 2.01 },
+    ];
+    programs.forEach(p => {
+      const pct = (p.gpa / 4.0 * 100).toFixed(1);
+      const color = p.gpa >= 3.0 ? '#3BB273' : p.gpa >= 2.5 ? 'var(--gold)' : 'var(--red)';
+      gpaEl.innerHTML += `
+        <div class="bar-row">
+          <div class="bar-label">${p.label}</div>
+          <div class="bar-track"><div class="bar-fill" style="width:${pct}%; background:${color}"></div></div>
+          <div class="bar-val">${p.gpa}</div>
+        </div>`;
+    });
+  }
+
+  // Demo bars
+  const demoEl = document.getElementById('demo-bars');
+  if (demoEl && !demoEl.dataset.rendered) {
+    demoEl.dataset.rendered = '1';
+    // Combined rough totals from all 5 program profiles
+    const groups = [
+      { label: 'White', count: 90+6+6+3+35, color: 'var(--slate)' },
+      { label: 'Hispanic', count: 58+8+8+5+12, color: 'var(--red)' },
+      { label: 'Black/Afr. Am.', count: 16+4+5+1+13, color: 'var(--gold)' },
+      { label: 'Asian', count: 14+1+2+0+4, color: '#3BB273' },
+      { label: 'Two or More', count: 9+1+1+0+5, color: '#7B9CBB' },
+    ];
+    const maxC = Math.max(...groups.map(g => g.count));
+    groups.forEach(g => {
+      const pct = (g.count / maxC * 100).toFixed(1);
+      demoEl.innerHTML += `
+        <div class="bar-row">
+          <div class="bar-label">${g.label}</div>
+          <div class="bar-track"><div class="bar-fill" style="width:${pct}%; background:${g.color}"></div></div>
+          <div class="bar-val">${g.count}</div>
+        </div>`;
+    });
+  }
+}
+
+// Init on load
+window.addEventListener('load', () => setTimeout(initCharts, 200));
+
+// ── Font size control ──
+const FONT_STEPS = [75, 85, 90, 95, 100, 107, 115, 125, 140];
+let fontStepIndex = 4; // default = 100%
+
+function adjustFont(dir) {
+  fontStepIndex = Math.max(0, Math.min(FONT_STEPS.length - 1, fontStepIndex + dir));
+  const pct = FONT_STEPS[fontStepIndex];
+  document.documentElement.style.fontSize = pct + '%';
+  const display = document.getElementById('font-size-display');
+  if (display) display.textContent = pct + '%';
+  localStorage.setItem('bcc-font-step', fontStepIndex);
+}
+
+// Restore saved font size
+(function() {
+  const saved = localStorage.getItem('bcc-font-step');
+  if (saved !== null) {
+    fontStepIndex = parseInt(saved, 10);
+    const pct = FONT_STEPS[fontStepIndex];
+    document.documentElement.style.fontSize = pct + '%';
+    window.addEventListener('load', () => {
+      const display = document.getElementById('font-size-display');
+      if (display) display.textContent = pct + '%';
+    });
+  }
+})();
+
+// ── Theme toggle ──
+function toggleTheme() {
+  const body = document.body;
+  const btn = document.getElementById('theme-toggle');
+  body.classList.toggle('light');
+  const isLight = body.classList.contains('light');
+  btn.textContent = isLight ? '🌙' : '☀️';
+  localStorage.setItem('bcc-theme', isLight ? 'light' : 'dark');
+}
+
+// Restore saved preference
+(function() {
+  const saved = localStorage.getItem('bcc-theme');
+  if (saved === 'light') {
+    document.body.classList.add('light');
+    const btn = document.getElementById('theme-toggle');
+    if (btn) btn.textContent = '🌙';
+  }
+})();
+</script>
+</body>
+</html>
