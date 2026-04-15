@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brookdale Engineering &amp; Technology — Course Hub</title>
+  <style>
+    :root {
+      --navy:   #0d1b2a;
+      --dark:   #111827;
+      --red:    #cc2200;
+      --accent: #e63012;
+      --gold:   #f5a623;
+      --teal:   #0d7377;
+      --purple: #6c4ec9;
+      --mid:    #1e2f45;
+      --card-bg:#16253a;
+      --text:   #e8edf3;
+      --muted:  #8fa0b5;
+      --border: rgba(255,255,255,0.08);
+      --radius: 14px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Hero ─────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, #0a1628 0%, #1a2a45 60%, #0d1b2a 100%);
+      border-bottom: 2px solid var(--red);
+      padding: 56px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(204,34,0,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 span { color: var(--red); }
+    .hero-sub {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 28px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .hero-badge span { color: var(--gold); font-weight: 700; }
+
+    /* ── Section labels ───────────────────── */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Featured card (Advisory Committee) ── */
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      background: var(--card-bg);
+      border: 1px solid rgba(204,34,0,0.35);
+      border-left: 4px solid var(--red);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      margin-bottom: 48px;
+    }
+    .featured-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+      border-color: rgba(204,34,0,0.7);
+    }
+    .featured-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .featured-card h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .featured-card h2 em {
+      color: var(--red);
+      font-style: normal;
+    }
+    .featured-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 560px;
+    }
+    .featured-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .chip {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .arrow-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .featured-card:hover .arrow-btn { background: #a81a00; }
+
+    /* ── Course grid ──────────────────────── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: inherit;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+    }
+    .card-stripe {
+      height: 4px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .card-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+    .card-course-id {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card-footer {
+      padding: 14px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .card-footer .link-label {
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+
+    /* per-card color theming */
+    .t-red   .card-stripe { background: var(--red); }
+    .t-red   .card-course-id,
+    .t-red   .card-footer .link-label { color: var(--red); }
+    .t-red   .card-icon { background: rgba(204,34,0,0.18); }
+    .t-red:hover { border-color: rgba(204,34,0,0.5); }
+
+    .t-teal  .card-stripe { background: var(--teal); }
+    .t-teal  .card-course-id,
+    .t-teal  .card-footer .link-label { color: #14b8a6; }
+    .t-teal  .card-icon { background: rgba(13,115,119,0.25); }
+    .t-teal:hover { border-color: rgba(13,115,119,0.5); }
+
+    .t-purple .card-stripe { background: var(--purple); }
+    .t-purple .card-course-id,
+    .t-purple .card-footer .link-label { color: #a78bfa; }
+    .t-purple .card-icon { background: rgba(108,78,201,0.25); }
+    .t-purple:hover { border-color: rgba(108,78,201,0.5); }
+
+    .t-navy  .card-stripe { background: #2563eb; }
+    .t-navy  .card-course-id,
+    .t-navy  .card-footer .link-label { color: #60a5fa; }
+    .t-navy  .card-icon { background: rgba(37,99,235,0.2); }
+    .t-navy:hover { border-color: rgba(37,99,235,0.5); }
+
+    .t-gold  .card-stripe { background: var(--gold); }
+    .t-gold  .card-course-id,
+    .t-gold  .card-footer .link-label { color: var(--gold); }
+    .t-gold  .card-icon { background: rgba(245,166,35,0.18); }
+    .t-gold:hover { border-color: rgba(245,166,35,0.5); }
+
+    /* ── Footer ───────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 28px 24px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 600px) {
+      .featured-card { grid-template-columns: 1fr; }
+      .arrow-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Hero ─────────────────────────────────────────── -->
+<header class="hero">
+  <p class="hero-eyebrow">Brookdale Community College &middot; School of STEAM</p>
+  <h1>Engineering &amp; Technology<br><span>Course Hub</span></h1>
+  <p class="hero-sub">Interactive learning resources, course portals, and program materials for the Engineering &amp; Technology department.</p>
+  <div class="hero-badge">Hosted at <span>mqaissaunee-bcc.github.io</span></div>
+</header>
+
+<main>
+  <div class="section">
+
+    <!-- ── Advisory Committee (Featured) ──── -->
+    <div class="section-label">Featured &mdash; Program Administration</div>
+
+    <a class="featured-card" href="https://mqaissaunee-bcc.github.io/dept/advisory_committee_dashboard.html" target="_blank">
+      <div>
+        <p class="featured-tag">&#9733; Advisory Committee &middot; 2025&ndash;26</p>
+        <h2>Engineering &amp; Technology<br><em>Advisory Committee</em></h2>
+        <p>Interactive dashboard for the 2025&ndash;26 program review cycle. Covers enrollment trends, workforce data, recommendations, and agenda materials for Engineering AS, Electronics AAS, NTIT AAS, and Cybersecurity ACA.</p>
+        <div class="featured-meta">
+          <span class="chip">Engineering AS</span>
+          <span class="chip">Electronics AAS</span>
+          <span class="chip">NTIT AAS</span>
+          <span class="chip">Cybersecurity ACA</span>
+          <span class="chip">April 2026</span>
+        </div>
+      </div>
+      <div class="arrow-btn">&#8599;</div>
+    </a>
+
+    <!-- ── Courses ─────────────────────────── -->
+    <div class="section-label">Courses &amp; Interactive Learning</div>
+
+    <div class="grid">
+
+      <!-- Red Hat System Admin -->
+      <a class="card t-red" href="https://mqaissaunee-bcc.github.io/linux-admin/" target="_blank">
+        <div class="card-stripe"></div>
+        <div class="card-body">
+          <div class="card-icon">&#128039;</div>
+          <p class="card-course-id">RH124 / RH134</p>
+          <h3>Red Hat System Administration I &amp; II</h3>
+          <p>Master essential Linux administration skills for Red Hat Enterprise Linux environments. RHCSA exam prep with interactive modules, labs, and a full course schedule.</p>
+        </div>
+        <div class="card-footer">
+          <span>15-Week Semester &middot; Spring 2025</span>
+          <span class="link-label">Open &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Ansible -->
+      <a class="card t-red" href="https://mqaissaunee-bcc.github.io/ansible/" target="_blank">
+        <div class="card-stripe"></div>
+        <div class="card-body">
+          <div class="card-icon">&#9881;</div>
+          <p class="card-course-id">RHA 294</p>
+          <h3>Red Hat Enterprise Linux Automation with Ansible</h3>
+          <p>Automate enterprise Linux administration using Red Hat Ansible Automation Platform. 10 chapters, 25+ hours, and 55+ labs covering playbooks, inventory, roles, and certification prep.</p>
+        </div>
+        <div class="card-footer">
+          <span>10 Chapters &middot; EX294 Aligned</span>
+          <span class="link-label">Open &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Nanotechnology -->
+      <a class="card t-purple" href="https://mqaissaunee-bcc.github.io/nanotech_book/" target="_blank">
+        <div class="card-stripe"></div>
+        <div class="card-body">
+          <div class="card-icon">&#128300;</div>
+          <p class="card-course-id">Nanotechnology</p>
+          <h3>Introduction to Nanotechnology</h3>
+          <p>A comprehensive course in nanoscale science and engineering. Nine modules spanning fundamentals, cleanroom technology, vacuum systems, plasma technology, thin film deposition, photolithography, and etching.</p>
+        </div>
+        <div class="card-footer">
+          <span>9 Modules &middot; Nanoscale Science</span>
+          <span class="link-label">Open &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Digital Forensics -->
+      <a class="card t-teal" href="https://mqaissaunee-bcc.github.io/forensics/" target="_blank">
+        <div class="card-stripe"></div>
+        <div class="card-body">
+          <div class="card-icon">&#128270;</div>
+          <p class="card-course-id">Digital Forensics</p>
+          <h3>Digital Forensics &amp; Investigations</h3>
+          <p>An interactive learning hub covering digital evidence, investigation procedures, forensic tools, and courtroom-ready analysis techniques. 13 modules with lessons, activities, and flashcards.</p>
+        </div>
+        <div class="card-footer">
+          <span>13 Modules &middot; 7 Sections Each</span>
+          <span class="link-label">Open &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Simulated SOC -->
+      <a class="card t-navy" href="https://mqaissaunee-bcc.github.io/SOC/" target="_blank">
+        <div class="card-stripe"></div>
+        <div class="card-body">
+          <div class="card-icon">&#128737;</div>
+          <p class="card-course-id">Cybersecurity</p>
+          <h3>Simulated SOC &mdash; Security Operations Center</h3>
+          <p>A hands-on simulated Security Operations Center with SIEM dashboard, network monitor, incident response workflows, and threat intelligence screens. Guided exercises across three analyst tiers.</p>
+        </div>
+        <div class="card-footer">
+          <span>v0.2.0 &middot; Draft / Work in Progress</span>
+          <span class="link-label">Open &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>Brookdale Community College &middot; School of STEAM &middot; Engineering &amp; Technology Department &nbsp;&bull;&nbsp;
+  <a href="https://mqaissaunee-bcc.github.io/" target="_blank">mqaissaunee-bcc.github.io</a></p>
+</footer>
+
+</body>
+</html>
